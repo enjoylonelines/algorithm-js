@@ -58,12 +58,6 @@ int main(void)
     }
   }
 
-  int mx = 0;
-  if (cnt == 0)
-    mx = 0;
-  else
-    mx = *max_element(area, area + cnt);
-
   cout << cnt << '\n'
-       << mx;
+       << *max_element(area, area + cnt);
 }
