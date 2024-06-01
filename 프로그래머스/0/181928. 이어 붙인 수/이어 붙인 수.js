@@ -1,5 +1,7 @@
 function solution(arr) {
-    const odd = arr.reduce((acc,cur) => acc + (cur%2 === 0 ? cur.toString() : ''), '');
-    const even =  arr.reduce((acc,cur) => acc + (cur%2 === 1 ? cur.toString() : ''), '');
- return Number(odd) + Number(even)
+    const {odd, even}= arr.reduce((acc,cur) => {
+        if(cur%2=== 0) return {...acc, odd: acc.odd + cur.toString()}
+        else return {...acc, even: acc.even + cur.toString()}
+    }, {odd:'', even: ''})
+ return +odd + +even;
 }
