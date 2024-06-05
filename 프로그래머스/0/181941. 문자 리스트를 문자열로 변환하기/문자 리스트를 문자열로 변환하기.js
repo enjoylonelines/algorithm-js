@@ -1,5 +1,4 @@
 function solution(arr) {
-    let answer = '';
-    arr.forEach(item => answer = answer.concat(item));
+    const answer = arr.join('')
     return answer;
 }
