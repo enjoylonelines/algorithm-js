@@ -2,9 +2,7 @@ function solution(arr)
 {
     var answer = [];
     arr.forEach((item, idx) => {
-        const cmp = answer.pop();
-        if(idx > 0) answer.push(cmp)
-        
+        const cmp = arr[idx + 1]
         if(cmp !== item) {
             answer.push(item);
         } 
