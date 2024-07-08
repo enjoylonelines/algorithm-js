@@ -1,3 +1,3 @@
 function solution(names) {
-    return names.filter((name, idx) => idx % 5 === 0)
+    return names.filter((_, idx) => idx % 5 === 0)
 }
