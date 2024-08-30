@@ -1,3 +1,3 @@
 function solution(q, r, code) {
-    return code.split('').filter((v, idx) => idx%q === r ? v : null).join('');
+    return [...code].filter((_, idx) => idx % q === r).join('')
 }
