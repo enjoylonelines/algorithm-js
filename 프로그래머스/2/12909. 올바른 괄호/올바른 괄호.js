@@ -1,5 +1,6 @@
 function solution(s){
     const arr = [];
+    
     for(let char of s) {
         if(char === '(') arr.push(char)
         else {
@@ -7,5 +8,6 @@ function solution(s){
             else arr.pop()
         }
     }
-    return !arr.length 
+    
+    return arr.length === 0 
 }
