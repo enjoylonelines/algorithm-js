@@ -1,16 +1,14 @@
-function solution(priorities, location) {
+function solution(pot, loc) {
     let order = 0;
-    priorities = priorities.map((val, idx) => ({ val, idx }));
-
-    while (priorities.length > 0) {
-        let maxEl = Math.max(...priorities.map(el => el.val)); // 남은 요소들 중 최대값 계산
-        let tmp = priorities.shift();
-
-        if (tmp.val === maxEl) { // 현재 값이 최대값인 경우
+    pot = pot.map((val, idx) => ({val, idx}))
+    while(pot.length > 0) {
+        let maxEl = Math.max(...pot.map(el => el.val))
+        let tmp = pot.shift()
+        if(tmp.val === maxEl) {
             order++;
-            if (tmp.idx === location) return order;
-        } else { // 최대값이 아닌 경우 다시 뒤로 보내기
-            priorities.push(tmp);
+            if(tmp.idx === loc) return order;
+        } else {
+            pot.push(tmp)
         }
     }
 }
