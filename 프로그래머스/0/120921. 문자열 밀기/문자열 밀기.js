@@ -2,7 +2,6 @@ function solution(A, B) {
     if(A === B) return 0;
     
     let cnt = 0;
-    let flag = -1;
     let len = A.length;
     const arr = A.split('');
     
@@ -13,11 +12,9 @@ function solution(A, B) {
 
         cnt++;
         if(str === B) {
-            flag = 1;
-            break;
+            return cnt;
         }
     }
     
-    if(flag !== 1) return flag;
-    return cnt;
+    return -1;
 }
