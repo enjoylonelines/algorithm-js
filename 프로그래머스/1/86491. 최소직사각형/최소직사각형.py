@@ -1,13 +1,11 @@
 def solution(sizes):
-    widths = []
-    heights = []
+    row = 0
+    col = 0
     for size in sizes:
         size.sort()
         [w, h] = size
-        widths.append(w)
-        heights.append(h)
-    max_w = max(widths)
-    max_h = max(heights)
-    answer = max_w * max_h
+        row = max(row, w)
+        col = max(col, h)
+    answer = row * col
     
     return answer
