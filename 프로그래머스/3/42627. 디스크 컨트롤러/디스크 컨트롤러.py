@@ -1,25 +1,24 @@
 import heapq
-
 def solution(jobs):
-    jobs.sort(key=lambda x: x[0])  # 시작시간 기준 정렬
     heap = []
-    time = 0
     job_idx = 0
-    arr = []
+    current_time = 0
+    turn_times = []
 
+    jobs.sort(key = lambda x: x[0])
     while job_idx < len(jobs) or heap:
-        # 현재 시간에 요청된 작업 힙에 추가
-        while job_idx < len(jobs) and jobs[job_idx][0] <= time:
+        # 현재 시간에 요청된 작업을 힙에 push
+        while job_idx < len(jobs) and jobs[job_idx][0] <= current_time:
             s, l = jobs[job_idx]
             heapq.heappush(heap, (l, s))
             job_idx += 1
-
+        # 현재 시간 기준 작업 처리
         if heap:
             l, s = heapq.heappop(heap)
-            time += l
-            arr.append(time - s)
+            current_time += l
+            turn_times.append(current_time - s)
+        # !처리할 작업이 없으면 다음 요청 시점으로 점프
         else:
-            # 처리할 작업 없으면 다음 작업 시작시간으로 점프
-            time = jobs[job_idx][0]
-
-    return sum(arr) // len(arr)
+            current_time = jobs[job_idx][0]
+            
+    return sum(turn_times)//len(turn_times)
