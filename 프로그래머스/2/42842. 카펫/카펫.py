@@ -1,6 +1,6 @@
 def solution(brown, yellow):
     size = brown + yellow
-    for h in range(3,  size//3 + 1):
+    for h in range(3,  int(size**(1/2)) + 1):
         if not size % h == 0: continue
         w = size // h
         if w < h: continue
