@@ -9,5 +9,6 @@ def solution(k, dungeons):
             if req <= cur_hp:
                 cur_hp -= div
                 cnt += 1
-            arr.append(cnt)
+            else: break
+        arr.append(cnt)
     return max(arr)
