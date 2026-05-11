@@ -3,18 +3,11 @@ arr = []
 def solution(k, dungeons):
     for p in permutations(dungeons, len(dungeons)):
         cnt = 0
-        fatigue = k
+        cur_hp = k
         for idx,cors in enumerate(p):
             req,div = cors
-            cnt += 1
-            if idx == len(p) - 1:
-                if fatigue < req: cnt -= 1
-                arr.append(cnt)
-                break;
-            elif fatigue >= req: 
-                fatigue -= div
-            else:
-                cnt -= 1
-                arr.append(cnt)
-                break
+            if req <= cur_hp:
+                cur_hp -= div
+                cnt += 1
+            arr.append(cnt)
     return max(arr)
