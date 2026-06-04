@@ -1,10 +1,10 @@
 # [level 0] x 사이의 개수 - 181867 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181867) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181867?language=python3) 
 
 ### 성능 요약
 
-메모리: 38.4 MB, 시간: 2.42 ms
+메모리: 12.6 MB, 시간: 1.59 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 07월 14일 19:46:29
+2026년 06월 04일 15:07:08
 
 ### 문제 설명
 
