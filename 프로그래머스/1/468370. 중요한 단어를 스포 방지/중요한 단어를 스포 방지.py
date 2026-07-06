@@ -1,7 +1,6 @@
 def solution(m, sps):
     words = set(m.split())
     spolior_words = []
-    st = ""
     m = list(m)
 
     for s, e in sps:
@@ -15,8 +14,8 @@ def solution(m, sps):
     words = ''.join(m).split()
     w = set(words)
     s = set(spolior_words)
-    print(w, s)
+
     for important in s.copy():
         if important in w: s.remove(important)
-    print(s)
+
     return len(s)
