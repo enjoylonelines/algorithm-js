@@ -1,13 +1,13 @@
 def solution(number, limit, power):
+    div = [0] * (number + 1)
+    for i in range(1, number + 1):
+        for j in range(i, number + 1, i):
+            div[j] += 1
     summ = 0
-    for n in range(1, number + 1):
-        cnt = 0
-        i = 1
-        while i**2 <= n:
-            if n % i == 0:
-                if i**2 == n: cnt += 1
-                else: cnt += 2
-            i += 1
-        if cnt > limit: cnt = power
-        summ += cnt
+    for i in range(1, number + 1):
+        if div[i] > limit:
+            summ += power
+        else:
+            summ += div[i]
+    
     return summ
