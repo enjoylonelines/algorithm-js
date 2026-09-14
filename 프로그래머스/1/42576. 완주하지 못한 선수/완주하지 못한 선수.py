@@ -1,10 +1,10 @@
-def solution(participant, completion):
-    answer = ''
+def solution(p, c):
     dic = {}
-    for name in participant:
-        dic[name] = dic.get(name, 0) + 1
-    for name in completion:
+    for name in p:
+        if dic.get(name): dic[name] += 1
+        else: dic[name] = 1
+    for name in c:
         dic[name] -= 1
-    answer = max(dic, key = lambda x: dic[x])
+    for key in dic:
+        if dic[key]: return key
     
-    return answer
